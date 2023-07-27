@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> F.9 - Exercício 1</title>
+</head>
+
+<body>
+	<h3> F.9 - Exercício 1 </h3>
+	<p> Cálculo do IMC (Índice de Massa Corporal) </p>
+	
+<script>
+	function calcula_IMC(val_peso,val_altura)
+	{
+		var imc=val_peso /(val_altura*val_altura);
+		return imc;
+	}
+	function avalia_IMC(imc)
+	{
+		switch (true)
+			{
+				case (imc<18.8):
+					return("Abaixo do peso.");
+					break;
+				case (imc<24.9):
+					return("Peso normal.");
+					break;
+				case (imc<29.9):
+					return("Acima do peso.");
+					break;
+				case (imc>=30):
+					return("Obesidade.");
+					break;
+				default:
+					return("Valor inválido");
+			} //fim ciclo switch
+	} //fim função 
+	
+	var imc,resultado;
+	var peso, altura;
+	peso=parseFloat(prompt("Insere um peso em Kgs : ",""));
+	altura=parseFloat(prompt("Insere a altura em metro (exemplo: 1.75)",""));
+	imc=calcula_IMC(peso,altura);
+	resultado=avalia_IMC(imc);
+	
+	document.write("<u> Valores inseridos </u> </br>");
+	document.write("Peso :" + peso + "</br>");
+	document.write("Altura :" + altura + "</br> </br>");
+	
+	document.write("<u> Resultados </u> </br>");
+	document.write("IMC :" + imc + "</br>");
+	document.write("Avaliação : " + resultado + "</br>");
+	
+</script>
+</body>
+</html>
